@@ -73,22 +73,27 @@ namespace CapstonePigLatin
                         //prefix is the consants up to the vowel
                         string prefix = word.Substring(0, vowelIndex);
                         //suffix is starting with the vowel to the end of the word
-                        string suffix = word.Substring(vowelIndex, word.Length - 3);
+                        string suffix = word.Substring(vowelIndex);
                         Console.WriteLine(suffix + prefix + "ay");
                         break;
+
                     }
+                }
                     //I can't get this message to print.  
                     string userContinue = "";
                     while (userContinue != "y" && userContinue != "n")
+
                     {
                         Console.WriteLine("Would you like to translate another word? (y/n)");
-                        string more = (Console.ReadLine().ToLower());
-                        if (more == "n")
+                        userContinue = (Console.ReadLine().ToLower());
+                        if (userContinue == "n")
                         {
+                            userInput = false;
                             Console.WriteLine("All done");
                         }
+                    
                     }
-                }
+                
             }
             
         }
